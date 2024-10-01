@@ -75,10 +75,12 @@ class die {
   }
 
   void show() {
+    //Dice square
     fill(#FFFFFF);
     rect(diceX, diceY, 50, 50, 20);
     
     fill(#000000);
+    //Display number of dots based on roll
     if (diceRoll == 1){
       ellipse(diceX, diceY, 10, 10);
     }
@@ -89,6 +91,5 @@ class die {
 
   void roll() {
     diceRoll = (int)(Math.random()*6)+1;
-    System.out.println(diceRoll);
   }
 }
