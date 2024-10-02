@@ -9,14 +9,14 @@ void draw() {
   background(#3CC652);
   textAlign(CENTER);
   button();
-  if (size == 1) {
+  if (siz == 1) {
     for (int y = 60; y <= 570; y += 60) { //9 rows
       for (int x = 60; x <= 570; x += 60) { //9 columns
         die dice1 = new die(x, y);
         dice1.show();
       }
     }
-  } else if (size == 0.5) {
+  } else if (siz == 0.5) {
     for (int y = 30; y <= 570; y += 30) { //9 rows
       for (int x = 30; x <= 570; x += 30) { //9 columns
         die dice1 = new die(x, y);
@@ -33,23 +33,23 @@ void mousePressed() {
   redraw();
 }
 
-void button() { //Button that changes size of dice
+void button() { //Button that changes siz of dice
   fill(#FF5858);
   rectMode(CENTER);
   rect(120, 582, 200, 20, 20);
   fill(#000000);
-  text("Click Here To Change Size", 125, 586);
+  text("Click Here To Change siz", 125, 586);
   if (mousePressed == true) {
     if (mouseX >= 20 && mouseX <= 220 && mouseY >= 572 && mouseY <= 590) {
-      if (size == 0.5) {
-        size = 1;
-      } else if (size == 1) {
-        size = 0.5;
+      if (siz == 0.5) {
+        siz = 1;
+      } else if (siz == 1) {
+        siz = 0.5;
       }
     }
   }
 }
-double size = 1;
+double siz = 1;
 int sum = 0;
 
 class die {
@@ -61,7 +61,7 @@ class die {
   }
 
   void show() {
-    if (size == 1) { //Display large dice
+    if (siz == 1) { //Display large dice
       //Dice square
       fill(#FFFFFF);
       rect(diceX, diceY, 50, 50, 15);
@@ -101,7 +101,7 @@ class die {
         ellipse(diceX-10, diceY, 10, 10); //circle in middle left
         ellipse(diceX+10, diceY, 10, 10); //circle in middle left
       }
-    } else if (size == 0.5) { //Display Smaller Dice
+    } else if (siz == 0.5) { //Display Smaller Dice
       //Dice square
       fill(#FFFFFF);
       rect(diceX, diceY, 25, 25, 7.5);
