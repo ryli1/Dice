@@ -1,3 +1,5 @@
+//The small dice's dots are all shifted to the left, pls fix.
+
 void setup() {
   noLoop();
   rectMode(CENTER);
