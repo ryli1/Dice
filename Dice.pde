@@ -17,7 +17,7 @@ void draw() {
       }
     }
   } else if (siz == 0.5) {
-    for (int y = 30; y <= 570; y += 30) { //9 rows
+    for (int y = 30; y <= 540; y += 30) { //9 rows
       for (int x = 30; x <= 570; x += 30) { //9 columns
         die dice1 = new die(x, y);
         dice1.show();
@@ -38,7 +38,7 @@ void button() { //Button that changes siz of dice
   rectMode(CENTER);
   rect(120, 582, 200, 20, 20);
   fill(#000000);
-  text("Click Here To Change siz", 125, 586);
+  text("Click Here To Change Size", 125, 586);
   if (mousePressed == true) {
     if (mouseX >= 20 && mouseX <= 220 && mouseY >= 572 && mouseY <= 590) {
       if (siz == 0.5) {
