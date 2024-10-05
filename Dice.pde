@@ -1,4 +1,5 @@
 //Click on a certain dice to reroll it and update the sum
+//Remove System.out.println()
 
 void setup() {
   noLoop();
