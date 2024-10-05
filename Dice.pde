@@ -6,7 +6,6 @@ void setup() {
   size(600, 600);
 }
 
-
 void draw() {
   background(#3CC652);
   textAlign(CENTER);
@@ -42,7 +41,6 @@ void button() { //Button that changes size of dice
   fill(#000000);
   text("Click Here To Change Size", 125, 586);
   if (mousePressed == true) {
-    //ERROR ON HERE; WHERE IT CHECKS IF MOUSE IS ON BUTTON
     if (mouseX >= 20 && mouseX <= 220 && mouseY >= 80 && mouseY <= 590) {
       if (size == 0.5) {
         size = 1;
