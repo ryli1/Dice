@@ -34,22 +34,7 @@ void mousePressed() {
   redraw();
 }
 
-void button() { //Button that changes size of dice
-  fill(#FF5858);
-  rectMode(CENTER);
-  rect(120, 582, 200, 20, 20);
-  fill(#000000);
-  text("Click Here To Change Size", 125, 586);
-  if (mousePressed == true) {
-    if (mouseX >= 20 && mouseX <= 220 && mouseY >= 80 && mouseY <= 590) {
-      if (size == 0.5) {
-        size = 1;
-      } else if (size == 1) {
-        size = 0.5;
-      }
-    }
-  }
-}
+
 double size = 1;
 int sum = 0;
 
@@ -155,3 +140,21 @@ void diceClickedCheck(int x, int y){
   
   
 }
+
+void button() { //Button that changes size of dice
+  fill(#FF5858);
+  rectMode(CENTER);
+  rect(120, 582, 200, 20, 20);
+  fill(#000000);
+  text("Click Here To Change Size", 125, 586);
+  if (mousePressed == true) {
+    if (mouseX >= 20 && mouseX <= 220 && mouseY >= 80 && mouseY <= 590) {
+      if (size == 0.5) {
+        size = 1;
+      } else if (size == 1) {
+        size = 0.5;
+      }
+    }
+  }
+}
+
