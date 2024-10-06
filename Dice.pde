@@ -10,7 +10,7 @@ void setup() {
 void draw() {
   background(#3CC652);
   textAlign(CENTER);
-  //button();
+  button();
   if (siz == 1) {
     for (int y = 60; y <= 570; y += 60) { //9 rows
       for (int x = 60; x <= 570; x += 60) { //9 columns
@@ -149,7 +149,7 @@ void button() { //Button that changes siz of dice
   fill(#000000);
   text("Click Here To Change siz", 125, 586);
   if (mousePressed == true) {
-    if (mouseX >= 20 && mouseX <= 220 && mouseY >= 80 && mouseY <= 590) {
+    if (mouseX >= 20 && mouseX <= 220 && mouseY >= 575 && mouseY <= 590) {
       if (siz == 0.5) {
         siz = 1;
       } else if (siz == 1) {
@@ -158,4 +158,3 @@ void button() { //Button that changes siz of dice
     }
   }
 }
-
