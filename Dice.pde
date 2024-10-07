@@ -6,8 +6,8 @@ void setup() {
   rectMode(CENTER);
   size(600, 600);
 }
-int [] storedDiceX = {0, 10};
-int [] storedDiceY = {0};
+int [] storedDiceX = new int[81];
+int [] storedDiceY = new int[81];
 
 void draw() {
   background(#3CC652);
@@ -19,9 +19,9 @@ void draw() {
       for (int x = 60; x <= 570; x += 60) { //9 columns
         die dice1 = new die(x, y);
         dice1.show();
-        //storedDiceX[i] = x;
-        //storedDiceY[i] = y;
-        //i++;
+        storedDiceX[i] = x;
+        storedDiceY[i] = y;
+        i++;
       }
     }
   } else if (siz == 0.5) {
@@ -45,7 +45,8 @@ void mousePressed() {
 }
 
 void diceClickedCheck(int x, int y){
-  
+  for(int i = 0; i < 81; i++){
+    //if(
   
 }
 
