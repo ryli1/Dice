@@ -6,20 +6,26 @@ void setup() {
   rectMode(CENTER);
   size(600, 600);
 }
+int [] storedDiceX = {0, 10};
+int [] storedDiceY = {0};
 
 void draw() {
   background(#3CC652);
   textAlign(CENTER);
-  button();
+  //button();
+  int i = 0;
   if (siz == 1) {
     for (int y = 60; y <= 570; y += 60) { //9 rows
       for (int x = 60; x <= 570; x += 60) { //9 columns
         die dice1 = new die(x, y);
         dice1.show();
+        //storedDiceX[i] = x;
+        //storedDiceY[i] = y;
+        //i++;
       }
     }
   } else if (siz == 0.5) {
-    for (int y = 30; y <= 570; y += 30) { //9 rows
+    for (int y = 30; y <= 540; y += 30) { //9 rows
       for (int x = 30; x <= 570; x += 30) { //9 columns
         die dice1 = new die(x, y);
         dice1.show();
@@ -33,8 +39,15 @@ void draw() {
 void mousePressed() {
   sum = 0;
   redraw();
+  diceClickedCheck(mouseX, mouseY);
+  System.out.println("X: " + mouseX);
+  System.out.println("Y: " + mouseY);
 }
 
+void diceClickedCheck(int x, int y){
+  
+  
+}
 
 double siz = 1;
 int sum = 0;
@@ -137,10 +150,7 @@ class die {
   }
 }
 
-void diceClickedCheck(int x, int y){
-  
-  
-}
+
 
 void button() { //Button that changes siz of dice
   fill(#FF5858);
