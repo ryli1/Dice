@@ -1,37 +1,26 @@
 //Click on a certain dice to reroll it and update the sum
 //Remove System.out.println(), replace size with siz
 
+//Nothing works right now
+
 void setup() {
   noLoop();
   rectMode(CENTER);
   size(600, 600);
+  background(#3CC652);
+  reroll();
 }
 int [] storedDiceX = new int[81];
 int [] storedDiceY = new int[81];
 
 void draw() {
-  background(#3CC652);
+  pushMatrix();
+  rectMode(CORNER);
+  fill(#3CC652);
+  rect(0, 550, 600, 60);
+  popMatrix();
   textAlign(CENTER);
-  //button();
-  int i = 0;
-  if (siz == 1) {
-    for (int y = 60; y <= 570; y += 60) { //9 rows
-      for (int x = 60; x <= 570; x += 60) { //9 columns
-        die dice1 = new die(x, y);
-        dice1.show();
-        storedDiceX[i] = x;
-        storedDiceY[i] = y;
-        i++;
-      }
-    }
-  } else if (siz == 0.5) {
-    for (int y = 30; y <= 540; y += 30) { //9 rows
-      for (int x = 30; x <= 570; x += 30) { //9 columns
-        die dice1 = new die(x, y);
-        dice1.show();
-      }
-    }
-  }
+  button();
   fill(#000000);
   text("Total: " + sum, 500, 585);
 }
@@ -40,14 +29,20 @@ void mousePressed() {
   sum = 0;
   redraw();
   diceClickedCheck(mouseX, mouseY);
-  System.out.println("X: " + mouseX);
-  System.out.println("Y: " + mouseY);
+  //System.out.println("X: " + mouseX);
+  //System.out.println("Y: " + mouseY);
 }
 
-void diceClickedCheck(int x, int y){
-  for(int i = 0; i < 81; i++){
-    //if(
-  
+void diceClickedCheck(int x, int y) {
+  for (int i = 0; i < 81; i++) { //Checks if a mouse click is within the boundaries of a dice
+    if ((x < storedDiceX[i]+25) && (x > storedDiceX[i]-25)) { 
+      if ((y < storedDiceY[i]+25) && (y > storedDiceY[i]-25)) {
+        System.out.println("WORKS");
+        die newDice = new die((i/9)*60, (i/9)*60);
+        newDice.show();
+      }
+    }
+  }
 }
 
 double siz = 1;
@@ -151,8 +146,6 @@ class die {
   }
 }
 
-
-
 void button() { //Button that changes siz of dice
   fill(#FF5858);
   rectMode(CENTER);
@@ -161,10 +154,33 @@ void button() { //Button that changes siz of dice
   text("Click Here To Change Size", 125, 586);
   if (mousePressed == true) {
     if (mouseX >= 20 && mouseX <= 220 && mouseY >= 575 && mouseY <= 590) {
-      if (siz == 0.5) {
+      /*if (siz == 0.5) {
         siz = 1;
       } else if (siz == 1) {
         siz = 0.5;
+      }*/
+      reroll();
+    }
+  }
+}
+
+void reroll() {
+  int i = 0;
+  if (siz == 1) {
+    for (int y = 60; y <= 570; y += 60) { //9 rows
+      for (int x = 60; x <= 570; x += 60) { //9 columns
+        die dice1 = new die(x, y);
+        dice1.show();
+        storedDiceX[i] = x;
+        storedDiceY[i] = y;
+        i++;
+      }
+    }
+  } else if (siz == 0.5) {
+    for (int y = 30; y <= 540; y += 30) { //9 rows
+      for (int x = 30; x <= 570; x += 30) { //9 columns
+        die dice1 = new die(x, y);
+        dice1.show();
       }
     }
   }
