@@ -159,7 +159,7 @@ void button() { //Button that changes siz of dice
   fill(#FFFFFF);
   text("Click Here To Reroll", 150, 586);
   if (mousePressed == true) {
-    if (mouseX >= 20 && mouseX <= 220 && mouseY >= 575 && mouseY <= 590) {
+    if (mouseX >= 50 && mouseX <= 270 && mouseY >= 575 && mouseY <= 590) {
       sum = 0;
       reroll();
     }
